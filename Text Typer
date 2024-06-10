@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Typer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        #editor {
+            width: 100%;
+            height: 300px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            resize: vertical;
+            overflow: auto;
+            padding: 10px;
+        }
+        #output {
+            width: 100%;
+            min-height: 200px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="editor" contenteditable="true">
+    <!-- Users can input their HTML code here -->
+</div>
+
+<div id="output"></div>
+
+<script>
+    // Function to update output div with user input
+    function updateOutput() {
+        var editorContent = document.getElementById('editor').innerHTML;
+        var outputDiv = document.getElementById('output');
+        outputDiv.innerHTML = editorContent;
+    }
+
+    // Update output when user types
+    document.getElementById('editor').addEventListener('input', updateOutput);
+
+    // Initial update
+    updateOutput();
+</script>
+
+</body>
+</html>
